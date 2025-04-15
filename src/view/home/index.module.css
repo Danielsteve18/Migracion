@@ -1,15 +1,12 @@
 /* Estilos Generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
     color: #ffffff;
     background-color: #1c1c1e;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -41,7 +38,7 @@ body {
 }
     
 
-nav a {
+.nav .a_index {
     position: relative;
     font-size: 18px;
     color: white;
@@ -52,7 +49,7 @@ nav a {
 
 }
 
-nav a::before {
+.nav .a_index::before {
     content: "";
     position: absolute;
     top: 100%;
@@ -64,7 +61,7 @@ nav a::before {
 
 }
 
-nav a:hover::before {
+.nav .a_index:hover::before {
     width: 100%;
 
 }
@@ -93,104 +90,7 @@ nav a:hover::before {
     .btn1:active {
     opacity: 0.5;
     }
-    /*Formulario*/
-    /* Estilos específicos del formulario de registro */
-    h2 {
-        text-align: center;
-        font-size: 36px;
-        margin: 30px 0;
-        color: #444;
-    }
     
-    form {
-        max-width: 500px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 40px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-    }
-    
-    label {
-        display: block;
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: #444;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        background-color: #F2F2F2;
-        margin-bottom: 20px;
-        box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.1);
-        color: #333;
-    }
-    
-    button[type="submit"] {
-        padding: 10px 20px;
-        font-size: 20px;
-        color: #fff;
-        background-color: #36c2b3;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-    }
-    
-    button[type="submit"]:hover {
-        background-color: #F57F17;
-    }
-    
-    a {
-        color: #333;
-    }
-    
-    a:hover {
-        color: #444;
-    }
-    
-    p {
-        margin-top: 20px;
-        font-size: 18px;
-        text-align: center;
-    }
-    
-    
-        #username:focus,
-        #email:focus,
-        #password:focus,
-        #password_confirm:focus {
-            background-color: #fff;
-            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        #username:invalid,
-        #email:invalid,
-        #password:invalid,
-        #password_confirm:invalid {
-            border-color: #F44336;
-        }
-
-        #username:valid,
-        #email:valid,
-        #password:valid,
-        #password_confirm:valid {
-            border-color: #4CAF50;
-        }
-
-        #password_confirm {
-            margin-bottom: 40px;
-        }
-
-
-    /*Fin formulario*/
 
 /* Sección Hero Principal con Efecto Parallax */
 .hero {
@@ -221,7 +121,7 @@ nav a:hover::before {
     animation: fadeInUp 1s ease-in-out;
 }
 
-.hero_content h2 {
+.hero_content .h2_index {
     font-size: 3.8rem;
     margin-bottom: 1.2rem;
     color: #36c2b3;
@@ -265,7 +165,7 @@ nav a:hover::before {
     text-align: center;
 }
 
-.about h2 {
+.about .h2_index {
     font-size: 2.5rem;
     color: #36c2b3;
     margin-bottom: 1rem;
@@ -280,14 +180,12 @@ nav a:hover::before {
     color: #c9c9c9;
 }
 
+
 .features {
+    
     display: flex;
     justify-content: space-around;
     gap: 2rem;
-}
-
-.feature {
-    width: 30%;
     padding: 2rem;
     border-radius: 10px;
     background-color: #1c1c1e;
@@ -295,20 +193,93 @@ nav a:hover::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.feature:hover {
+.features:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.feature h3 {
-    font-size: 1.8rem;
+.features .h3_index {
+    font-size: 1.6rem;
     color: #36c2b3;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
+    margin-top: 8%;
 }
 
-.feature p {
+.features p {
     color: #d3d3d3;
+   
+    margin-top: 8%;
+    
 }
+
+.learn_more{
+   
+   padding: 1rem; 
+}
+
+/* Seccion dev*/
+.C_devp{
+    min-height: 100vh;
+    background-color: orange;
+    padding: 14vh 10vw 10vh 15vw; /* arriba, derecha, abajo, izquierda */
+}
+
+.devpONE{
+    box-shadow: 5px 10px 15px 5px #36c2b3;
+    border-radius: 20px;
+    margin-top: 15px;
+    width: 80vw;
+    
+    
+}
+
+.devNames{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    font-family: "Dancing Script";
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    border-radius: 10px;
+    
+    
+}
+
+.S{
+    margin-left: 5vw;
+    grid-column: span 2 / span 2;
+}
+.D{
+    grid-column: span 2 / span 2;
+    grid-column-start: 4;
+}
+
+.C_sd{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    font-family: "Dancing Script";
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    border-radius: 10px;
+}
+.Salazar{
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+}
+.Montaño{
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 4;
+
+}
+
+.img_dev{
+    width: 20vw;
+    height: 20vh;
+}
+/*fin seccion dev*/
+
 
 /* Pie de Página */
 .footer {
