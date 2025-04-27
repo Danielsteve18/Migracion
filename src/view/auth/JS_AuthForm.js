@@ -1,31 +1,14 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-import {
-    getAuth,
-    signInWithEmailAndPassword,
-    
-} from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
-
-import {
-    doc,
-    getDoc,
-    getFirestore
-} from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js'; // Import Firestore
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc, getFirestore } from 'firebase/firestore/lite'; // Import Firestore
+import {firebaseconfig} from "./register/JS_register.js"; // Importar la configuración de Firebase desde el archivo de registro
 
 
 
-
-const firebaseConfig = {
-    apiKey: "AIzaSyB0gh9Hq5JXTEmeqvsJHLVQULdH1W7YffM",
-    authDomain: "nexus-5c53d.firebaseapp.com",
-    projectId: "nexus-5c53d",
-    storageBucket: "nexus-5c53d.appspot.com",
-    messagingSenderId: "208164583979",
-    appId: "1:208164583979:web:8fd62a5c315fe50ad7486e",
-    measurementId: "G-WENGRWS7N9"
-  };
+const firebaseConfigA = firebaseconfig;
 
 // Inicialización de Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfigA);
 const auth = getAuth(app);
 const db = getFirestore(app);  // Inicialización de Firestore
 

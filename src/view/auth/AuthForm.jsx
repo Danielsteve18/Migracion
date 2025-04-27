@@ -21,23 +21,39 @@ function AuthForm() {
     e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
 
     try {
-      const userCredentials = { correo: loginForm.correo, contraseña: loginForm.contraseña };console.log(userCredentials);
-      const response = await AuthFormlog(userCredentials);
+        const userCredentials = { correo: loginForm.correo, contraseña: loginForm.contraseña };
+        console.log(userCredentials);
 
-      console.log(response);
+        const response = await AuthFormlog(userCredentials);
+
+        if (response) {
+            Swal.fire({
+                title: "Bienvenido a NEXUS",
+                text: `Tu correo es: ${response.correo}`,
+                icon: "success",
+                confirmButtonText:"OK",
+            });
+
+            // Limpia el formulario después de un login exitoso
+            setLoginForm({ correo: "", contraseña: "" });
+        } else {
+            Swal.fire({
+                title: "Error",
+                text: "Credenciales incorrectas",
+                icon: "error",
+                confirmButtonText: "OK",
+            });
+        }
     } catch (error) {
-      Swal.fire({
-        title: "Error",
-        text: error.message,
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+        Swal.fire({
+            title: "Error en el login",
+            text: error.message,
+            icon: "error",
+            confirmButtonText: "OK",
+        });
     }
-
-    // Limpia el formulario
-    setLoginForm({ correo: "", contraseña: "" });
-  };
-
+};
+  
  
   
   return (

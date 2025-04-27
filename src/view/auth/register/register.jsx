@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useState } from "react";
 import Swal from "sweetalert2"; // Importa SweetAlert2  
-import { prueba } from "./JS_prueba";
+import { registerUser} from "./JS_register";
 import Style from "../AuthForm.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -14,22 +14,44 @@ function RegisterForm() {
   const handleLoginChange = (e) => {
     setRegisterForm({ ...registerForm, [e.target.name]: e.target.value });
   };
-
- 
+ const navegar= (e) => navigate('/login-form');
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
 
     try {
-      const userCredentials = { nombre: registerForm.Name, correo: registerForm.correo, contraseña: registerForm.contraseña };console.log(userCredentials);
-      const response = await prueba(userCredentials);
-
+      const userCredentials = { nombre: registerForm.Name, correo: registerForm.correo, contraseña: registerForm.contraseña };
+      const response = await registerUser(userCredentials);
+      
+      if (response){
       Swal.fire({
-        title: `Tu nombre es: ${response.Name}`,
-        text: `Bienvenido ${response.correo}`,
-        icon: "success",
-        confirmButtonText: "OK",
-      })
+          title: "Bienvenido a NEXUS",
+          text: `Tu nombre es: ${localStorage.getItem("nombre")}
+           Preciona "oK" para iniciar seccion`,
+          icon: "success",
+          confirmButtonText: `OK ${navegar}`, 
+      });
+    } else if (!response){
+      Swal.fire({
+        title: "Credenciales existentes",
+        text: "Ingresa con nuvas, credenciales.",
+        icon: "error",
+        confirmButtonText: "OK"
+    });
+
+    } else{
+      Swal.fire({
+        title: "Vuelve a interalo",
+        text:"error en el registro",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
+    }
+      
+       // Limpia el formulario después de un login exitoso
+       setRegisterForm({ correo: "", contraseña: "" });
+          
+
     } catch (error) {
       Swal.fire({
         title: "Error",
@@ -79,7 +101,7 @@ function RegisterForm() {
             required  
           />
           <button className={Style.button_Auth} type="submit">
-            Login
+            Registrarse
           </button>
         </form>
       </div>

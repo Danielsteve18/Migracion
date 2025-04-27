@@ -1,8 +1,16 @@
-
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Style from "./index.module.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import {Dev} from "../../components/indexC";
 
 function Index (){
+    useEffect(() => {
+        AOS.init({
+          duration: 1300, // Duración de la animación (en milisegundos)
+        });
+      }, []);
    
     const navigate = useNavigate(); 
 
@@ -34,6 +42,9 @@ function Index (){
                 <a  href="#learn_more" className={`${Style.btn} ${Style.btn_learn_more}`}>Descubre Más</a>
             </div>
         </section>
+        
+        <Dev/>
+            
 
         <section className={Style.about}  >
             <div className={Style.container} id='learn_more'>

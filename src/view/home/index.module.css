@@ -100,7 +100,7 @@ body {
     justify-content: center;
     position: relative;
     color: #fff;
-    background: url('fondo-educativo.jpg') center/cover no-repeat fixed;
+    
     perspective: 1000px;
 }
 
@@ -129,7 +129,7 @@ body {
     perspective: 500px;
 }
 
-.hero_content p {
+.hero_content .p_index {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -169,15 +169,15 @@ body {
     font-size: 2.5rem;
     color: #36c2b3;
     margin-bottom: 1rem;
-    transform: translateZ(50px);
+    
     perspective: 300px;
 }
 
-.about p {
+.about .p_index {
     max-width: 600px;
     margin: 0 auto;
     margin-bottom: 3rem;
-    color: #c9c9c9;
+    
 }
 
 
@@ -205,7 +205,7 @@ body {
     margin-top: 8%;
 }
 
-.features p {
+.features .p_index {
     color: #d3d3d3;
    
     margin-top: 8%;
@@ -217,68 +217,7 @@ body {
    padding: 1rem; 
 }
 
-/* Seccion dev*/
-.C_devp{
-    min-height: 100vh;
-    background-color: orange;
-    padding: 14vh 10vw 10vh 15vw; /* arriba, derecha, abajo, izquierda */
-}
 
-.devpONE{
-    box-shadow: 5px 10px 15px 5px #36c2b3;
-    border-radius: 20px;
-    margin-top: 15px;
-    width: 80vw;
-    
-    
-}
-
-.devNames{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
-    font-family: "Dancing Script";
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Sombra */
-    border-radius: 10px;
-    
-    
-}
-
-.S{
-    margin-left: 5vw;
-    grid-column: span 2 / span 2;
-}
-.D{
-    grid-column: span 2 / span 2;
-    grid-column-start: 4;
-}
-
-.C_sd{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
-    font-family: "Dancing Script";
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5); /* Sombra */
-    border-radius: 10px;
-}
-.Salazar{
-    grid-column: span 2 / span 2;
-    grid-row: span 4 / span 4;
-}
-.Montaño{
-    grid-column: span 2 / span 2;
-    grid-row: span 4 / span 4;
-    grid-column-start: 4;
-
-}
-
-.img_dev{
-    width: 20vw;
-    height: 20vh;
-}
-/*fin seccion dev*/
 
 
 /* Pie de Página */
@@ -290,6 +229,6 @@ body {
     font-size: 0.9rem;
 }
 
-.footer p {
+.footer .p_index {
     margin: 0;
 }
